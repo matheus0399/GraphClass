@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +9,8 @@ namespace busca.entities
     internal class ListItem
     {
         public String label;
-        public int weight;
-        public ListItem(String label, int weight)
+        public double weight;
+        public ListItem(String label, double weight)
         {
             this.label = label;
             this.weight = weight;
@@ -24,7 +24,7 @@ namespace busca.entities
         {
             this.label = label;
         }
-        public void addLink(String label, int weight)
+        public void addLink(String label, double weight)
         {
             this.links.Add(new ListItem(label, weight));
         }
