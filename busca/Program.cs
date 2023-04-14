@@ -1,4 +1,4 @@
-﻿using busca.entities;
+using busca.entities;
 
 Boolean end = false;
 ListGraph lGp = new ListGraph(false, false);
@@ -8,8 +8,8 @@ Console.Clear();
 Console.Write("Você deseja criar um grafo de lista(sim/não)? ");
 Boolean listGraph = Console.ReadLine().Trim().ToLower() == "sim";
 
-lGp = lGp.readFile("C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\graph.txt");
-mGp = mGp.readFile("C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\graph.txt");
+
+
 
 Boolean reboot = false;
 do
@@ -22,17 +22,17 @@ do
             mGp = new MatrixGraph(false, false);
             Console.Write("Você deseja criar um grafo de lista(sim/não)? ");
             listGraph = Console.ReadLine().Trim().ToLower() == "sim";
-            lGp = lGp.readFile("C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\graph.txt");
-            mGp = mGp.readFile("C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\graph.txt");
             reboot = false;
         }
         if (listGraph == true)
         {
-            lGp.showGraph();
+            lGp = lGp.readFile("C:\\Users\\7251777\\Desktop\\espacoaereo.txt");
+            // lGp.showGraph();
         }
         else
         {
-            mGp.showGraph();
+            mGp = mGp.readFile("C:\\Users\\7251777\\Desktop\\espacoaereo.txt");
+            // mGp.showGraph();
         }
         Console.Write("\nQual o tipo de ação você deseja executar:"
             + "\n 1 - Busca em largura"
