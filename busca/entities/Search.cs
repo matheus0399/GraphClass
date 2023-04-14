@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,8 +13,8 @@ namespace busca.entities
         public String label;
         public String last;
         public Boolean closed;
-        public int distance;
-        public Node(String label, String last, Boolean closed, int distance) { 
+        public double distance;
+        public Node(String label, String last, Boolean closed, double distance) { 
             this.label = label;
             this.last = last;
             this.closed = closed;
@@ -267,7 +267,7 @@ namespace busca.entities
             {
                 if (label != origin)
                 {
-                    int weight = mGp.linkWeight(mGp.getVertexIndex(first.label), mGp.getVertexIndex(label));
+                    double weight = mGp.linkWeight(mGp.getVertexIndex(first.label), mGp.getVertexIndex(label));
 
                     if (nodes.Find(x => x.label == label).distance == 0 || weight + first.distance < nodes.Find(x => x.label == label).distance)
                     {
@@ -301,7 +301,7 @@ namespace busca.entities
                     {
                         if (label != origin)
                         {
-                            int weight = mGp.linkWeight(mGp.getVertexIndex(node.label), mGp.getVertexIndex(label));
+                            double weight = mGp.linkWeight(mGp.getVertexIndex(node.label), mGp.getVertexIndex(label));
 
                             if (nodes.Find(x => x.label == label).distance == 0 || weight + node.distance < nodes.Find(x => x.label == label).distance)
                             {
@@ -360,7 +360,7 @@ namespace busca.entities
             {
                 if (label != origin)
                 {
-                    int weight = lGp.linkWeight(lGp.getVertexIndex(first.label), lGp.getVertexIndex(label));
+                    double weight = lGp.linkWeight(lGp.getVertexIndex(first.label), lGp.getVertexIndex(label));
 
                     if (nodes.Find(x => x.label == label).distance == 0 || weight + first.distance < nodes.Find(x => x.label == label).distance)
                     {
@@ -397,7 +397,7 @@ namespace busca.entities
                     {
                         if (label != origin)
                         {
-                            int weight = lGp.linkWeight(lGp.getVertexIndex(node.label), lGp.getVertexIndex(label));
+                            double weight = lGp.linkWeight(lGp.getVertexIndex(node.label), lGp.getVertexIndex(label));
 
                             if (nodes.Find(x => x.label == label).distance == 0 || weight + node.distance < nodes.Find(x => x.label == label).distance)
                             {
