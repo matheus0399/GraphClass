@@ -1,4 +1,4 @@
-﻿using busca.entities;
+using busca.entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -91,7 +91,7 @@ namespace busca.entities
             }
         }
 
-        public Boolean addLink(String origin, String destination, int weight = 1)
+        public Boolean addLink(String origin, String destination, double weight = 1)
         {
             if (origin == destination)
             {
@@ -137,7 +137,7 @@ namespace busca.entities
             return -1;
         }
 
-        public void addLinkProcess(String origin, String destination, int weight)
+        public void addLinkProcess(String origin, String destination, double weight)
         {
             foreach (Link l in this.graph)
             {
@@ -224,7 +224,7 @@ namespace busca.entities
         }
 
 
-        public int linkWeight(int origin, int destination)
+        public double linkWeight(int origin, int destination)
         {
             if (origin == destination) return 0;
             
@@ -320,7 +320,12 @@ namespace busca.entities
                 {
                     ret.addVertex(info[1]);
                 }
-                ret.addLink(info[0], info[1], int.Parse(info[2]));
+                if (info[2][0] == '.'){
+                    ret.addLink(info[0], info[1], Double.Parse("0," + info[2].Split('.')[1]));
+                }
+                else {
+                    ret.addLink(info[0], info[1], Double.Parse(info[2]));
+                }
             }
             return ret;
         }
