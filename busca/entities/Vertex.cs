@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +10,7 @@ namespace busca.entities
     {
         public String labelColumn;
         public String labelRow;
-        public int weight;
+        public double weight;
 
         public Vertex(String labelColumn, String labelRow)
         {
